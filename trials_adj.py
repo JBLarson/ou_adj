@@ -254,7 +254,7 @@ if adj.comb == 'ou':
 fig, axs = plt.subplots(2, 2)
 
 
-#overall
+#og trial
 axs[0,0].pie(sizes,
 	explode=(0.1, 0.0, 0.0),
 	labels=labelz,
@@ -265,7 +265,7 @@ axs[0,0].axis('equal')
 axs[0,0].set_title("OG Trial")
 
 
-#bcs
+#trial 1
 axs[0,1].pie(sizes1,
 	explode=(0.1, 0.0, 0.0),
 	labels=labelz,
@@ -275,7 +275,7 @@ axs[0,1].pie(sizes1,
 axs[0,1].axis('equal')
 axs[0,1].set_title("Trial 1")
 
-#winloss
+#trial 2
 axs[1,0].pie(sizes2,
 	explode=(0.1, 0.0, 0.0),
 	labels=labelz,
@@ -287,7 +287,7 @@ axs[1,0].axis('equal')
 axs[1,0].set_title("Trial 2")
 
 
-#losswin
+#trial 3
 axs[1,1].pie(sizes3,
 	explode=(0.1, 0.0, 0.0),
 	labels=labelz,
