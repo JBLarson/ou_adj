@@ -1,6 +1,7 @@
 import pandas as pd
-
 import input_adj as adj
+
+import ex_adj as ex
 
 #localize input variables
 b1o = adj.b1o
@@ -198,9 +199,12 @@ print()
 
 trialz = pd.DataFrame({'key': legend, 'og': ogx, 't1': t1x, 't2': t2x, 't3': t3x, 't4': t4x})
 
-#print(trialz)
+dispbets = input("display bet description df? (y/n)")
 
-
+if dispbets == 'y':
+	print(trialz)
+	print()
+	print()
 
 
 
@@ -275,8 +279,12 @@ x_one = pd.DataFrame({'key': legend1, 'og': tx1, 't1': t1x1, 't2': t2x1, 't3': t
 #x_one['avg'] = (x_one['og'] + x_one['t1'] + x_one['t2'] + x_one['t3'] + x_one['t4'])/5
 
 
-print()
-#print(x_one)
+dispx1 = input("display ∑w/∑r df? (y/n)")
+
+if dispx1 == 'y':
+	print(x_one)
+	print()
+	print()
 
 
 
@@ -376,6 +384,20 @@ s4x.append(ls_t4)
 
 statz = pd.DataFrame({'key': legen, 'og': one, 's1': s1x, 's2': s2x, 's3': s3x, 's4': s4x})
 
-print(statz)
-print()
-print()
+dispsµ = input("display sµ df? (y/n)")
+
+
+if dispsµ == 'y':
+	print(statz)
+	print()
+	print()
+
+
+
+dispc = input("display pie charts? (y/n)")
+
+
+if dispc == 'y':
+	import trials_adj
+
+
