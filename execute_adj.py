@@ -1,8 +1,6 @@
 import pandas as pd
 import input_adj as adj
 
-import ex_adj as ex
-
 #localize input variables
 b1o = adj.b1o
 b2o = adj.b2o
@@ -13,11 +11,11 @@ b2r = adj.b2r
 b1w = adj.b1w
 b2w = adj.b2w
 
-#bet1/2 score title variables
+#bets1/2 score title variables
 b1sT = "o" + str(b1s) + " risk"
 b2sT = "u" + str(b2s) + " risk"
 
-#trial 0 sum_stats
+#og trial sum_stats
 risk_sum = b1r + b2r
 win_sum = b1w + b2w
 wr = win_sum/risk_sum
@@ -122,9 +120,6 @@ ls_t4 = lsµ_t4 / ss_t4
 
 
 
-
-
-
 #describe bets and scenarios DataFrame
 
 legend = []
@@ -208,8 +203,6 @@ if dispbets == 'y':
 
 
 
-
-
 #statistical analysis (x1) DataFrame
 
 legend1 = []
@@ -268,8 +261,6 @@ t4x1.append(ss_t4)
 t4x1.append(sr_t4)
 
 
-
-
 #create dataframe
 
 x_one = pd.DataFrame({'key': legend1, 'og': tx1, 't1': t1x1, 't2': t2x1, 't3': t3x1, 't4': t4x1})
@@ -285,7 +276,6 @@ if dispx1 == 'y':
 	print(x_one)
 	print()
 	print()
-
 
 
 #scenario avg DataFrame
@@ -309,7 +299,6 @@ legen.append("lw-sµ")
 legen.append("lsµ/sµ")
 
 
-
 one.append(ss)
 s1x.append(ss_t1)
 s2x.append(ss_t2)
@@ -319,63 +308,49 @@ s4x.append(ss_t4)
 one.append(adj.bcs)
 one.append(bsµ)
 one.append(bs)
-
 one.append(adj.winloss)
 one.append(wsµ)
 one.append(ws)
-
 one.append(adj.losswin)
 one.append(lsµ)
 one.append(ls)
 
-
 s1x.append(bcs_t1)
 s1x.append(bsµ_t1)
 s1x.append(bs_t1)
-
 s1x.append(winloss_t1)
 s1x.append(wsµ_t1)
 s1x.append(ws_t1)
-
 s1x.append(losswin_t1)
 s1x.append(lsµ_t1)
 s1x.append(ls_t1)
 
-
 s2x.append(bcs_t2)
 s2x.append(bsµ_t2)
 s2x.append(bs_t2)
-
 s2x.append(winloss_t2)
 s2x.append(wsµ_t2)
 s2x.append(ws_t2)
-
 s2x.append(losswin_t2)
 s2x.append(lsµ_t2)
 s2x.append(ls_t2)
 
-
 s3x.append(bcs_t3)
 s3x.append(bsµ_t3)
 s3x.append(bs_t3)
-
 s3x.append(winloss_t3)
 s3x.append(wsµ_t3)
 s3x.append(ws_t3)
-
 s3x.append(losswin_t3)
 s3x.append(lsµ_t3)
 s3x.append(ls_t3)
 
-
 s4x.append(bcs_t4)
 s4x.append(bsµ_t4)
 s4x.append(bs_t4)
-
 s4x.append(winloss_t4)
 s4x.append(wsµ_t4)
 s4x.append(ws_t4)
-
 s4x.append(losswin_t4)
 s4x.append(lsµ_t4)
 s4x.append(ls_t4)
@@ -391,7 +366,6 @@ if dispsµ == 'y':
 	print(statz)
 	print()
 	print()
-
 
 
 dispc = input("display pie charts? (y/n)")
