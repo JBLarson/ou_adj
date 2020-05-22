@@ -194,7 +194,8 @@ print()
 
 trialz = pd.DataFrame({'key': legend, 'og': ogx, 't1': t1x, 't2': t2x, 't3': t3x, 't4': t4x})
 
-dispbets = input("display bet description df? (y/n)")
+dispbets = ('y')
+#dispbets = input("display bet description df? (y/n)")
 
 if dispbets == 'y':
 	print(trialz)
@@ -269,8 +270,9 @@ x_one = pd.DataFrame({'key': legend1, 'og': tx1, 't1': t1x1, 't2': t2x1, 't3': t
 
 #x_one['avg'] = (x_one['og'] + x_one['t1'] + x_one['t2'] + x_one['t3'] + x_one['t4'])/5
 
+dispx1 = ('y')
 
-dispx1 = input("display ∑w/∑r df? (y/n)")
+#dispx1 = input("display ∑w/∑r df? (y/n)")
 
 if dispx1 == 'y':
 	print(x_one)
@@ -278,7 +280,19 @@ if dispx1 == 'y':
 	print()
 
 
-#scenario avg DataFrame
+
+
+
+
+
+
+
+
+
+
+
+
+#∑w / ∑r & scenarios DataFrame
 
 legen = []
 one = []
@@ -287,17 +301,37 @@ s2x = []
 s3x = []
 s4x = []
 
-legen.append("sµ")
 legen.append("bcs")
-legen.append("bcs-sµ")
-legen.append("bsµ/sµ")
 legen.append("winloss")
-legen.append("wl-sµ")
-legen.append("wsµ/sµ")
 legen.append("losswin")
+legen.append("sµ")
+legen.append("bcs-sµ")
+legen.append("wl-sµ")
 legen.append("lw-sµ")
+legen.append("bsµ/sµ")
+legen.append("wsµ/sµ")
 legen.append("lsµ/sµ")
 
+
+one.append(adj.bcs)
+one.append(adj.winloss)
+one.append(adj.losswin)
+
+s1x.append(bcs_t1)
+s1x.append(winloss_t1)
+s1x.append(losswin_t1)
+
+s2x.append(bcs_t2)
+s2x.append(winloss_t2)
+s2x.append(losswin_t2)
+
+s3x.append(bcs_t3)
+s3x.append(winloss_t3)
+s3x.append(losswin_t3)
+
+s4x.append(bcs_t4)
+s4x.append(winloss_t4)
+s4x.append(losswin_t4)
 
 one.append(ss)
 s1x.append(ss_t1)
@@ -305,70 +339,63 @@ s2x.append(ss_t2)
 s3x.append(ss_t3)
 s4x.append(ss_t4)
 
-one.append(adj.bcs)
 one.append(bsµ)
-one.append(bs)
-one.append(adj.winloss)
-one.append(wsµ)
-one.append(ws)
-one.append(adj.losswin)
-one.append(lsµ)
-one.append(ls)
-
-s1x.append(bcs_t1)
 s1x.append(bsµ_t1)
-s1x.append(bs_t1)
-s1x.append(winloss_t1)
-s1x.append(wsµ_t1)
-s1x.append(ws_t1)
-s1x.append(losswin_t1)
-s1x.append(lsµ_t1)
-s1x.append(ls_t1)
-
-s2x.append(bcs_t2)
 s2x.append(bsµ_t2)
-s2x.append(bs_t2)
-s2x.append(winloss_t2)
-s2x.append(wsµ_t2)
-s2x.append(ws_t2)
-s2x.append(losswin_t2)
-s2x.append(lsµ_t2)
-s2x.append(ls_t2)
-
-s3x.append(bcs_t3)
 s3x.append(bsµ_t3)
-s3x.append(bs_t3)
-s3x.append(winloss_t3)
-s3x.append(wsµ_t3)
-s3x.append(ws_t3)
-s3x.append(losswin_t3)
-s3x.append(lsµ_t3)
-s3x.append(ls_t3)
-
-s4x.append(bcs_t4)
 s4x.append(bsµ_t4)
-s4x.append(bs_t4)
-s4x.append(winloss_t4)
+
+one.append(wsµ)
+s1x.append(wsµ_t1)
+s2x.append(wsµ_t2)
+s3x.append(wsµ_t3)
 s4x.append(wsµ_t4)
-s4x.append(ws_t4)
-s4x.append(losswin_t4)
+
+one.append(lsµ)
+s1x.append(lsµ_t1)
+s2x.append(lsµ_t2)
+s3x.append(lsµ_t3)
 s4x.append(lsµ_t4)
+
+one.append(bs)
+s1x.append(bs_t1)
+s2x.append(bs_t2)
+s3x.append(bs_t3)
+s4x.append(bs_t4)
+
+one.append(ws)
+s1x.append(ws_t1)
+s2x.append(ws_t2)
+s3x.append(ws_t3)
+s4x.append(ws_t4)
+
+one.append(ls)
+s1x.append(ls_t1)
+s2x.append(ls_t2)
+s3x.append(ls_t3)
 s4x.append(ls_t4)
 
+keyT = "o"+str(b1s)+" u"+str(b2s)
+
+statz = pd.DataFrame({keyT: legen, 'og': one, 's1': s1x, 's2': s2x, 's3': s3x, 's4': s4x})
+
+nkstatz = pd.DataFrame({'og': one, 's1': s1x, 's2': s2x, 's3': s3x, 's4': s4x})
 
 
-statz = pd.DataFrame({'key': legen, 'og': one, 's1': s1x, 's2': s2x, 's3': s3x, 's4': s4x})
 
-dispsµ = input("display sµ df? (y/n)")
+dispscn = ('y')
+#dispscn = input("display sµ df? (y/n)")
 
 
-if dispsµ == 'y':
+
+if dispscn == 'y':
 	print(statz)
 	print()
 	print()
 
+dispc = ('y')
 
-dispc = input("display pie charts? (y/n)")
+#dispc = input("display pie charts? (y/n)")
 
 
 if dispc == 'y':
